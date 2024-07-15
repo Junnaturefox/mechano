@@ -22,18 +22,3 @@ jobs:
       - name: get date/time
         id: date
         run: echo "::set-output name=date::$(date +'%Y-%m-%d')"
-
-
-      - name: notify annoying people
-        env:
-          DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK_2 }}
-          DISCORD_USERNAME: Github Activity
-        uses: Ilshidur/action-discord@master
-        with:
-          args: |
-            ## New Github activity: ``${{ steps.date.outputs.date }}:${{ github.run_id }}``
-            ### Commit details:
-            ```
-              ${{ github.event.head_commit.message }}
-            ```
-
