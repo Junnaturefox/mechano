@@ -77,3 +77,4 @@ jobs:
           pattern: "build/libs/*"
           github-token: ${{ secrets.GITHUB_TOKEN }}
           release-url: ${{ steps.create_release.outputs.upload_url }}
+
